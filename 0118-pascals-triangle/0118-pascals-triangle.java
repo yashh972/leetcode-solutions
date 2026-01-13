@@ -6,22 +6,20 @@ class Solution {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> triangle=new ArrayList<>();
         for(int i=0;i<numRows;i++){
-            triangle.add(generateRow(i));
-        }   
-
+            triangle.add(list(i));
+        }
         return triangle;
+
     }
-    private List<Integer> generateRow(int rowIndex) {
-    List<Integer> row = new ArrayList<>();
-    long ans = 1;
+    private List<Integer> list(int rowIndex){
+        List<Integer> list=new ArrayList<>();
+        long ans=1;
+        list.add((int)ans);
 
-    row.add(1);
-
-    for (int i = 1; i <= rowIndex; i++) {
-        ans = ans * (rowIndex - i + 1) / i;
-        row.add((int) ans);
+        for(int i=1;i<=rowIndex;i++){
+            ans=ans*(rowIndex-i+1)/i;
+            list.add((int)ans);
+        }
+        return list;
     }
-
-    return row;
-}
 }
