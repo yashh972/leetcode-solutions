@@ -4,9 +4,10 @@ class Solution {
         int low=0;
         int mid=0;
         int high=n-1;
-        while (mid <= high){
+
+        while(mid<=high){
             if(nums[mid]==0){
-                swap(nums,low,mid);
+                swap(nums,mid,low);
                 low++;
                 mid++;
             }
@@ -14,12 +15,13 @@ class Solution {
                 mid++;
             }
             else{
-                swap(nums,mid,high);
+                swap(nums,high,mid);
                 high--;
+                
             }
         }
     }
-        private void swap(int[] nums,int i,int j){
+    private void swap(int[] nums,int i,int j){
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
