@@ -1,13 +1,17 @@
 class Solution {
     public boolean check(int[] nums) {
-        int n =nums.length;
+       int n=nums.length;
         int dropcount=0;
-        for(int i =0;i<n;i++){
-            int next=(i+1)%n;
-            if(nums[next]<nums[i]){
-                dropcount++;
-            }
+        boolean check=true;
+       for(int i=0;i<n;i++){
+        int next=(i+1) % n;
+        if(nums[i]>nums[next]){
+            dropcount++;
         }
-        return dropcount<=1;
+        if(dropcount>1){
+            check=false;
+        }
+       }
+       return check;
     }
 }
