@@ -2,15 +2,14 @@ import java.util.*;
 class Solution {
     public int maxProfit(int[] prices) {
        int n=prices.length;
-       int maxProfit=0;
        int min=prices[0];
-
+       int profit=0;
 
        for(int i=0;i<n;i++){
         int cost=prices[i]-min;
-        maxProfit=Math.max(cost,maxProfit);
+        profit=Math.max(profit,cost);
         min=Math.min(min,prices[i]);
        }
-       return maxProfit;
+       return profit;
     }
 }
